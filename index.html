@@ -146,11 +146,27 @@
 
         .burger {
             display: none;
-            font-size: 1.6rem;
-            cursor: pointer;
-            color: var(--forest);
-            background: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: transparent;
             border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 105;
+        }
+
+        .burger span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--forest);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #mobileNav {
+            display: none;
         }
 
         /* ===== PAGE CONTAINERS ===== */
@@ -1183,7 +1199,23 @@
             }
 
             .burger {
-                display: block;
+                display: flex;
+            }
+
+            .burger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .burger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-cta {
+                display: none !important;
             }
 
             .navbar {
@@ -1280,6 +1312,24 @@
                 grid-row: auto !important;
             }
 
+            #mobileNav {
+                display: flex !important;
+                flex-direction: column;
+                gap: 0;
+                padding: 0 28px 18px;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            #mobileNav.active {
+                max-height: 300px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
             section {
                 padding: 60px 0;
             }
@@ -1302,9 +1352,13 @@
             <a class="nav-cta"
                 href="https://wa.me/2349060736993?text=Hello%20Agrifarm%20Poultry%2C%20I%27d%20like%20to%20place%20an%20order"
                 target="_blank">💬 WhatsApp Us</a>
-            <button class="burger" onclick="toggleMobileNav()">☰</button>
+            <button class="burger" onclick="toggleMobileNav()" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <nav id="mobileNav" style="display:none;flex-direction:column;gap:0;padding:0 28px 18px;">
+        <nav id="mobileNav">
             <a style="padding:10px 0;border-bottom:1px solid var(--line);" onclick="showPage('home')">Home</a>
             <a style="padding:10px 0;border-bottom:1px solid var(--line);" onclick="showPage('about')">About Us</a>
             <a style="padding:10px 0;border-bottom:1px solid var(--line);" onclick="showPage('invest')">Invest With
@@ -1941,11 +1995,17 @@
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             window.scrollTo(0, 0);
-            document.getElementById('mobileNav').style.display = 'none';
+            
+            const burger = document.querySelector('.burger');
+            const nav = document.getElementById('mobileNav');
+            if (burger) burger.classList.remove('active');
+            if (nav) nav.classList.remove('active');
         }
         function toggleMobileNav() {
+            const burger = document.querySelector('.burger');
             const nav = document.getElementById('mobileNav');
-            nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+            if (burger) burger.classList.toggle('active');
+            if (nav) nav.classList.toggle('active');
         }
         function sendToWhatsapp() {
             const inputs = document.querySelectorAll('.form-card input, .form-card select, .form-card textarea');
