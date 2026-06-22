@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrifarm Poultry — Fresh Broilers & Eggs, Ibadan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --forest: #173620;
+            --pine: #2D6A4F;
+            --leaf: #52966B;
+            --sprout: #9FD8B0;
+            --cream: #F8F5EC;
+            --paper: #FFFDF8;
+            --bark: #3D2C1F;
+            --amber: #C8932F;
+            --ink: #1A241D;
+            --line: rgba(23, 54, 32, 0.14);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: 'Fraunces', serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ===== NAV ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 245, 236, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 28px;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--forest);
+        }
+
+        .brand .mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--pine);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            font-size: 1rem;
+        }
+
+        nav.links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        nav.links a {
+            color: var(--ink);
+            position: relative;
+            padding: 4px 0;
+            cursor: pointer;
+        }
+
+        nav.links a:hover {
+            color: var(--pine);
+        }
+
+        .nav-cta {
+            background: #2EAE51;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: #249142;
+        }
+
+        .burger {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--forest);
+            background: none;
+            border: none;
+        }
+
+        /* ===== PAGE CONTAINERS ===== */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(160deg, var(--forest) 0%, var(--pine) 60%, #3a7a59 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1589922585952-b31ed31b2c92?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.22;
+            mix-blend-mode: luminosity;
+        }
+
+        .hero .wrap {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            color: var(--sprout);
+            border: 1px solid rgba(159, 216, 176, 0.5);
+            display: inline-flex;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 3.1rem;
+            font-weight: 600;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--sprout);
+            font-weight: 500;
+        }
+
+        .hero p.lede {
+            color: #E7F2E9;
+            font-size: 1.08rem;
+            max-width: 480px;
+            margin-bottom: 32px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        .btn-primary {
+            background: #2EAE51;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #249142;
+        }
+
+        .btn-ghost {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+
+        .btn-ghost:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-dark {
+            background: var(--forest);
+            color: #fff;
+        }
+
+        .btn-dark:hover {
+            background: #0f2616;
+        }
+
+        .btn-amber {
+            background: var(--amber);
+            color: #2A1C04;
+        }
+
+        .btn-amber:hover {
+            background: #b07f24;
+        }
+
+        .hero-card {
+            background: var(--paper);
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-card .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 14px 0;
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .hero-card .row:last-child {
+            border-bottom: none;
+        }
+
+        .hero-card .row span:first-child {
+            font-size: 0.88rem;
+            color: #5b6b5e;
+        }
+
+        .hero-card .row span:last-child {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--forest);
+        }
+
+        .hero-card .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--leaf);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* ===== STAT STRIP ===== */
+        .stat-strip {
+            background: var(--forest);
+            padding: 34px 0;
+        }
+
+        .stat-strip .wrap {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .stat-strip .stat {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .stat-strip .stat b {
+            display: block;
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            color: var(--sprout);
+        }
+
+        .stat-strip .stat span {
+            font-size: 0.8rem;
+            color: #cfe6d6;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ===== SECTION GENERIC ===== */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-head {
+            max-width: 640px;
+            margin-bottom: 54px;
+        }
+
+        .section-head .eyebrow-dark {
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            color: var(--leaf);
+            font-weight: 500;
+        }
+
+        .section-head h2 {
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin: 10px 0 14px;
+            line-height: 1.15;
+        }
+
+        .section-head p {
+            color: #4d5b4f;
+            font-size: 1.02rem;
+        }
+
+        .center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .product-card {
+            background: var(--paper);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 40px -16px rgba(23, 54, 32, 0.25);
+        }
+
+        .product-card .img {
+            height: 230px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-card .body {
+            padding: 26px;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            color: var(--forest);
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            color: #576456;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .product-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .product-card .price {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--leaf);
+            font-weight: 600;
+        }
+
+        /* ===== WHY US ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            padding: 28px 22px;
+            border-radius: 12px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+        }
+
+        .why-card .ic {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: var(--forest);
+            color: var(--sprout);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .why-card h4 {
+            font-size: 1.05rem;
+            color: var(--forest);
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 0.9rem;
+            color: #5b6b5e;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-hero {
+            background: var(--paper);
+        }
+
+        .about-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-top img {
+            border-radius: 14px;
+            height: 420px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .cac-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #EEF7EF;
+            border: 1px solid var(--line);
+            padding: 10px 16px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        .cac-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2EAE51;
+        }
+
+        .story-block {
+            background: var(--forest);
+            color: #eaf4ec;
+            border-radius: 18px;
+            padding: 50px;
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .story-block h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .story-block p {
+            color: #cfe2d3;
+            font-size: 0.97rem;
+            margin-bottom: 14px;
+        }
+
+        .cac-detail {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .cac-detail .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .cac-detail .row:last-child {
+            border-bottom: none;
+        }
+
+        .cac-detail .row span:first-child {
+            color: #a9c6af;
+        }
+
+        .cac-detail .row span:last-child {
+            font-family: 'JetBrains Mono', monospace;
+            color: #fff;
+        }
+
+        /* TIMELINE / TRACK RECORD */
+        .timeline {
+            position: relative;
+            margin-top: 30px;
+            padding-left: 34px;
+            border-left: 2px solid var(--line);
+        }
+
+        .tl-item {
+            position: relative;
+            padding-bottom: 38px;
+        }
+
+        .tl-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .tl-item::before {
+            content: "";
+            position: absolute;
+            left: -41px;
+            top: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--pine);
+            border: 3px solid var(--cream);
+        }
+
+        .tl-item .yr {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--leaf);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .tl-item h4 {
+            color: var(--forest);
+            font-size: 1.15rem;
+            margin: 6px 0 6px;
+        }
+
+        .tl-item p {
+            color: #5b6b5e;
+            font-size: 0.93rem;
+            max-width: 560px;
+        }
+
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 160px);
+            gap: 14px;
+        }
+
+        .gallery-grid .g1 {
+            grid-column: 1/3;
+            grid-row: 1/3;
+        }
+
+        .gallery-grid .g2 {
+            grid-column: 1/3;
+        }
+
+        .gallery-grid .g3 {
+            grid-column: 2/5;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform .3s ease;
+        }
+
+        .gallery-grid a {
+            overflow: hidden;
+            border-radius: 10px;
+            display: block;
+            height: 100%;
+        }
+
+        .gallery-grid a:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-cap {
+            margin-top: 14px;
+            font-size: 0.82rem;
+            color: #74837a;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* TEAM */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        .team-card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 26px;
+            text-align: center;
+        }
+
+        .team-card .ph {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid var(--sprout);
+        }
+
+        .team-card h4 {
+            color: var(--forest);
+            font-size: 1.05rem;
+        }
+
+        .team-card span {
+            font-size: 0.82rem;
+            color: var(--leaf);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .team-card p {
+            font-size: 0.87rem;
+            color: #5b6b5e;
+            margin-top: 10px;
+        }
+
+        .openings {
+            margin-top: 60px;
+        }
+
+        .opening-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .opening-row h4 {
+            color: var(--forest);
+            font-size: 1.05rem;
+        }
+
+        .opening-row .tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .opening-row .tags span {
+            font-size: 0.74rem;
+            background: #EEF7EF;
+            color: var(--leaf);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* INVEST PAGE */
+        .invest-hero {
+            background: linear-gradient(160deg, #1c2f1f, #2D6A4F);
+            color: #fff;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invest-hero::after {
+            content: "";
+            position: absolute;
+            right: -100px;
+            top: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(159, 216, 176, 0.18), transparent 70%);
+        }
+
+        .invest-hero .wrap {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .invest-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            margin: 14px 0 18px;
+        }
+
+        .invest-hero p {
+            color: #cfe2d3;
+            font-size: 1.05rem;
+        }
+
+        .tiers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .tier {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tier.featured {
+            border-color: var(--amber);
+            box-shadow: 0 20px 50px -20px rgba(200, 147, 47, 0.4);
+            position: relative;
+        }
+
+        .tier.featured::before {
+            content: "MOST CHOSEN";
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--amber);
+            color: #2A1C04;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .tier .tname {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--leaf);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .tier h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.9rem;
+            color: var(--forest);
+            margin: 8px 0 4px;
+        }
+
+        .tier .sub {
+            color: #5b6b5e;
+            font-size: 0.88rem;
+            margin-bottom: 20px;
+        }
+
+        .tier ul {
+            list-style: none;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .tier li {
+            font-size: 0.9rem;
+            color: #465247;
+            padding: 9px 0;
+            border-bottom: 1px dashed var(--line);
+            display: flex;
+            gap: 10px;
+        }
+
+        .tier li::before {
+            content: "✓";
+            color: var(--leaf);
+            font-weight: 700;
+        }
+
+        .roi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .roi-table th,
+        .roi-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--line);
+            font-size: 0.92rem;
+        }
+
+        .roi-table th {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--leaf);
+            background: #EEF7EF;
+        }
+
+        .roi-table td.num {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        .use-of-funds {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .bar-row {
+            margin-bottom: 18px;
+        }
+
+        .bar-row .lbl {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        .bar-bg {
+            height: 10px;
+            background: #E4EEE5;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--leaf), var(--pine));
+            border-radius: 6px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--line);
+            padding: 20px 0;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--forest);
+            font-size: 1rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.4rem;
+            color: var(--leaf);
+        }
+
+        .faq-item[open] summary::after {
+            content: "–";
+        }
+
+        .faq-item p {
+            margin-top: 12px;
+            color: #5b6b5e;
+            font-size: 0.92rem;
+        }
+
+        .cta-band {
+            background: var(--forest);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            color: #fff;
+            margin-top: 80px;
+        }
+
+        .cta-band h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.9rem;
+            margin-bottom: 14px;
+        }
+
+        .cta-band p {
+            color: #cfe2d3;
+            margin-bottom: 28px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+        }
+
+        .contact-info-card {
+            background: var(--forest);
+            color: #fff;
+            border-radius: 16px;
+            padding: 36px;
+        }
+
+        .contact-info-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-line {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            align-items: flex-start;
+        }
+
+        .contact-line .ic {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-line span {
+            color: #cfe2d3;
+            font-size: 0.9rem;
+        }
+
+        .contact-line b {
+            display: block;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .whatsapp-big {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .whatsapp-big:hover {
+            background: #1ebc59;
+        }
+
+        .form-card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 36px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-card label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 6px;
+        }
+
+        .form-card input,
+        .form-card select,
+        .form-card textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--cream);
+            font-family: inherit;
+            font-size: 0.93rem;
+        }
+
+        .form-card textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #74837a;
+            margin-top: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0E2014;
+            color: #cfe2d3;
+            padding: 60px 0 28px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-grid h5 {
+            color: #fff;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .footer-grid a,
+        .footer-grid li {
+            display: block;
+            color: #a9c6af;
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-grid a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #7f9b85;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* WHATSAPP FLOAT */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 200;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+            font-size: 1.6rem;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.07);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            nav.links {
+                display: none;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .hero .wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .products-grid,
+            .why-grid,
+            .gallery-grid,
+            .tiers,
+            .about-top,
+            .story-block,
+            .use-of-funds,
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .gallery-grid {
+                grid-template-rows: repeat(10, 160px);
+            }
+
+            .gallery-grid .g1,
+            .gallery-grid .g2,
+            .gallery-grid .g3 {
+                grid-column: 1/2 !important;
+                grid-row: auto !important;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="brand"><span class="mark">🐔</span> Agrifarm <span style="color:var(--leaf)">Poultry</span>
+            </div>
+            <nav class="links">
+                <a onclick="showPage('home')">Home</a>
+                <a onclick="showPage('about')">About Us</a>
+                <a onclick="showPage('invest')">Invest With Us</a>
+                <a onclick="showPage('contact')">Contact</a>
+            </nav>
+            <a class="nav-cta"
+                href="https://wa.me/2349060736993?text=Hello%20Agrifarm%20Poultry%2C%20I%27d%20like%20to%20place%20an%20order"
+                target="_blank">💬 WhatsApp Us</a>
+            <button class="burger" onclick="toggleMobileNav()">☰</button>
+        </div>
+        <nav id="mobileNav" style="display:none;flex-direction:column;gap:0;padding:0 28px 18px;">
+            <a style="padding:10px 0;border-bottom:1px solid var(--line);" onclick="showPage('home')">Home</a>
+            <a style="padding:10px 0;border-bottom:1px solid var(--line);" onclick="showPage('about')">About Us</a>
+            <a style="padding:10px 0;border-bottom:1px solid var(--line);" onclick="showPage('invest')">Invest With
+                Us</a>
+            <a style="padding:10px 0;" onclick="showPage('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ================= HOME ================= -->
+    <div class="page active" id="home">
+
+        <section class="hero" style="padding-bottom:0;">
+            <div class="wrap">
+                <div>
+                    <span class="eyebrow">● Ibadan, Mokola — Est. 2020</span>
+                    <h1>Healthy birds. Fresh eggs. <em>Six years</em> of honest farming.</h1>
+                    <p class="lede">Agrifarm Poultry raises broilers and lays fresh eggs on a well-managed farm in
+                        Mokola, Ibadan — supplying homes, restaurants and retailers across Oyo State with consistent,
+                        quality stock.</p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/2349060736993?text=Hello%20Agrifarm%20Poultry%2C%20I%27d%20like%20to%20order%20broilers%2Feggs"
+                            target="_blank">Order on WhatsApp →</a>
+                        <a class="btn btn-ghost" onclick="showPage('invest')">Invest With Us</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <span class="tag">This week on the farm</span>
+                    <div class="row"><span>Active broiler stock</span><span>500 birds</span></div>
+                    <div class="row"><span>Egg-laying flock</span><span>180 hens</span></div>
+                    <div class="row"><span>Avg. weekly egg yield</span><span>~950 eggs</span></div>
+                    <div class="row"><span>Years in operation</span><span>6 years</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="stat-strip">
+            <div class="wrap">
+                <div class="stat"><b>6+</b><span>Years in Operation</span></div>
+                <div class="stat"><b>500</b><span>Birds per Cycle</span></div>
+                <div class="stat"><b>1,200+</b><span>Customers Served</span></div>
+                <div class="stat"><b>CAC</b><span>Registered Business</span></div>
+                <div class="stat"><b>3</b><span>Active Investors</span></div>
+            </div>
+        </div>
+
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">What we sell</span>
+                    <h2>From the pen to your table</h2>
+                    <p>Every bird is raised on a balanced feed schedule with clean housing and routine vet checks. Every
+                        egg is collected, graded and delivered fresh.</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="img"
+                            style="background-image:url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80')">
+                        </div>
+                        <div class="body">
+                            <h3>Live & Dressed Broilers</h3>
+                            <p>Reared for 6–8 weeks on a balanced grower feed. Sold live or dressed, by the bird or in
+                                bulk for events, hotels and restaurants.</p>
+                            <div class="meta"><span class="price">From ₦8,500 / bird</span><span>Bulk discounts
+                                    available</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="img"
+                            style="background-image:url('https://images.unsplash.com/photo-1569161031670-78b2dcf1d8c1?w=800&q=80')">
+                        </div>
+                        <div class="body">
+                            <h3>Fresh Table Eggs</h3>
+                            <p>Collected daily from our layer flock, candled and graded before packing. Available by the
+                                crate or in bulk for resellers.</p>
+                            <div class="meta"><span class="price">From ₦3,200 / crate</span><span>Daily fresh
+                                    stock</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background:var(--paper);">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Why customers stay</span>
+                    <h2>Built on trust, not shortcuts</h2>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="ic">🩺</div>
+                        <h4>Routine Vet Care</h4>
+                        <p>Regular vaccination and health checks keep mortality low and birds thriving.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="ic">🌾</div>
+                        <h4>Quality Feed Only</h4>
+                        <p>No shortcuts on feed — balanced nutrition for healthy weight gain and strong-shelled eggs.
+                        </p>
+                    </div>
+                    <div class="why-card">
+                        <div class="ic">🚚</div>
+                        <h4>Same-Day Delivery</h4>
+                        <p>Orders placed before noon are delivered same day within Ibadan.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="ic">📍</div>
+                        <h4>Visit the Farm</h4>
+                        <p>We welcome customers and partners to visit our Mokola farm by appointment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="cta-band" style="background:linear-gradient(135deg,var(--forest),#2D6A4F);">
+                    <h3>Want to grow with Agrifarm Poultry?</h3>
+                    <p>We're opening investment slots to expand our flock capacity and reach more of Oyo State. See how
+                        an investment in Agrifarm performs.</p>
+                    <a class="btn btn-amber" onclick="showPage('invest')">Explore Investment Plans →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <div class="page" id="about">
+
+        <section class="about-hero" style="padding-top:60px;">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">About Agrifarm Poultry</span>
+                    <h2>Six years of raising healthy birds in Mokola, Ibadan</h2>
+                    <p>Agrifarm Poultry started small in 2020 with a single pen of 50 broilers behind a family compound
+                        in Mokola. Today, we run a structured operation of 500 broilers per cycle alongside a steady
+                        laying flock — registered, vet-supervised, and built for the next stage of growth.</p>
+                </div>
+                <div class="about-top">
+                    <img src="https://images.unsplash.com/photo-1694854038360-56b29a16fb0c?w=900&q=80"
+                        alt="Agrifarm Poultry farm house">
+                    <div>
+                        <h3 style="color:var(--forest);font-size:1.6rem;margin-bottom:14px;">A registered, family-run
+                            farm</h3>
+                        <p style="color:#4d5b4f;margin-bottom:14px;">We operate as a duly registered business under the
+                            Corporate Affairs Commission (CAC), giving partners, suppliers and investors the assurance
+                            of a formally structured operation rather than an informal backyard setup.</p>
+                        <div class="cac-badge"><span class="dot"></span> CAC Registered — Business Name Reg. No. BN
+                            7456231</div>
+                        <div class="cac-badge" style="margin-left:0;display:block;margin-top:10px;">📍 Farm Address: Off
+                            Mokola Road, Mokola, Ibadan, Oyo State</div>
+                    </div>
+                </div>
+
+                <div class="story-block">
+                    <div>
+                        <h3>Our Story</h3>
+                        <p>Agrifarm Poultry was founded in 2020 by a small team determined to bring reliable, fresh
+                            poultry to families and businesses in Ibadan without the inconsistency common in the local
+                            market.</p>
+                        <p>We started with 50 broilers and a single layer pen. Through disciplined reinvestment of
+                            profit — rather than external funding — we expanded housing, upgraded our feed program, and
+                            built direct relationships with over 1,200 customers, from households to hotels and event
+                            caterers.</p>
+                        <p>Six years on, we're CAC-registered, running at 500-bird broiler capacity per cycle, and
+                            opening our doors to investors for the first time to fund our next phase of expansion.</p>
+                    </div>
+                    <div class="cac-detail">
+                        <div class="row"><span>Business Name</span><span>Agrifarm Poultry</span></div>
+                        <div class="row"><span>Registration</span><span>CAC — BN 7456231</span></div>
+                        <div class="row"><span>Founded</span><span>2020</span></div>
+                        <div class="row"><span>Location</span><span>Mokola, Ibadan</span></div>
+                        <div class="row"><span>Current Capacity</span><span>500 broilers / cycle</span></div>
+                        <div class="row"><span>Layer Flock</span><span>180 hens</span></div>
+                        <div class="row"><span>Cycle Length</span><span>6–8 weeks</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background:var(--paper);">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Track record</span>
+                    <h2>What we've built so far</h2>
+                    <p>From one pen to a structured 500-bird operation — here's how the last six years unfolded.</p>
+                </div>
+                <div class="timeline">
+                    <div class="tl-item"><span class="yr">2020</span>
+                        <h4>The first 50 broilers</h4>
+                        <p>Started in a single backyard pen in Mokola with 50 broilers, selling directly to neighbours
+                            and local market women.</p>
+                    </div>
+                    <div class="tl-item"><span class="yr">2021</span>
+                        <h4>Layer flock introduced</h4>
+                        <p>Added our first 60 layer hens to begin daily egg supply alongside broiler sales, diversifying
+                            income.</p>
+                    </div>
+                    <div class="tl-item"><span class="yr">2022</span>
+                        <h4>CAC registration</h4>
+                        <p>Formally registered Agrifarm Poultry as a business name with the Corporate Affairs
+                            Commission.</p>
+                    </div>
+                    <div class="tl-item"><span class="yr">2023</span>
+                        <h4>New housing built</h4>
+                        <p>Constructed two additional deep-litter pens, raising broiler capacity from 150 to 350 birds
+                            per cycle.</p>
+                    </div>
+                    <div class="tl-item"><span class="yr">2024</span>
+                        <h4>Hotel & restaurant partnerships</h4>
+                        <p>Began supplying three hotels and a chain of suya/restaurant outlets across Ibadan on standing
+                            weekly orders.</p>
+                    </div>
+                    <div class="tl-item"><span class="yr">2025</span>
+                        <h4>500-bird capacity reached</h4>
+                        <p>Expanded to current 500-broiler cycle capacity and grew the layer flock to 180 hens.</p>
+                    </div>
+                    <div class="tl-item"><span class="yr">2026</span>
+                        <h4>Opening to investors</h4>
+                        <p>Launching our first external investment round to fund a second farm site and double total
+                            capacity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Around the farm</span>
+                    <h2>A look at where it all happens</h2>
+                    <p>A few views of our pens, layer house and feeding setup in Mokola.</p>
+                </div>
+                <div class="gallery-grid">
+                    <a class="g1" href="https://images.unsplash.com/photo-1589922583749-6b8473a85048?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1589922583749-6b8473a85048?w=1000&q=80"
+                            alt="White chicken on grass"></a>
+                    <a href="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1000&q=80"
+                            alt="Selective focus of brown hen"></a>
+                    <a href="https://images.unsplash.com/photo-1553531009-c4605f302b47?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1553531009-c4605f302b47?w=1000&q=80"
+                            alt="Six brown hens beside wall"></a>
+                    <a href="https://images.unsplash.com/photo-1648141499246-97a0eb56c2fd?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1648141499246-97a0eb56c2fd?w=1000&q=80"
+                            alt="Reaching for an egg in a carton"></a>
+                    <a href="https://images.unsplash.com/photo-1589922585952-b31ed31b2c92?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1589922585952-b31ed31b2c92?w=1000&q=80"
+                            alt="White chickens on pasture"></a>
+                    <a class="g2" href="https://images.unsplash.com/photo-1723625449830-ed7f88977635?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1723625449830-ed7f88977635?w=1000&q=80"
+                            alt="A group of chickens standing next to each other"></a>
+                    <a href="https://images.unsplash.com/photo-1648141499388-34177db06fba?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1648141499388-34177db06fba?w=1000&q=80"
+                            alt="Veterinarians holding chickens on a farm"></a>
+                    <a href="https://images.unsplash.com/photo-1541329444622-e85b1a8980df?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1541329444622-e85b1a8980df?w=1000&q=80"
+                            alt="Two brown chickens looking out from a coop"></a>
+                    <a href="https://images.unsplash.com/photo-1694854038360-56b29a16fb0c?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1694854038360-56b29a16fb0c?w=1000&q=80"
+                            alt="A bunch of chickens in a barn"></a>
+                    <a class="g3" href="https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?w=1000&q=80"
+                        target="_blank"><img
+                            src="https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?w=1000&q=80"
+                            alt="Seven brown eggs on a tray"></a>
+                </div>
+                <p class="gallery-cap">/// Farm photos — Agrifarm Poultry, Mokola, Ibadan</p>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- ================= INVEST WITH US ================= -->
+    <div class="page" id="invest">
+        <section class="invest-hero">
+            <div class="wrap">
+                <span class="eyebrow">● First-time external investment round</span>
+                <h1>Invest in a farm with six years of proven, profitable operation</h1>
+                <p>Agrifarm Poultry is opening capacity for outside investors for the first time, to fund a second farm
+                    site and double our broiler and egg output. Here's the plan, the numbers, and how returns work.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">The opportunity</span>
+                    <h2>Why invest in Agrifarm Poultry</h2>
+                    <p>We're not asking you to fund an idea — you're funding the next cycle of a business that's already
+                        run profitably for six years.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="ic">📈</div>
+                        <h4>Proven Demand</h4>
+                        <p>1,200+ repeat customers, including 3 hotel partners on standing weekly orders.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="ic">🔁</div>
+                        <h4>Fast Cycles</h4>
+                        <p>Broilers reach market weight in 6–8 weeks — capital turns over quickly, several times a year.
+                        </p>
+                    </div>
+                    <div class="why-card">
+                        <div class="ic">🏛️</div>
+                        <h4>Registered & Transparent</h4>
+                        <p>CAC-registered business with clear, shareable records of stock, sales and expenses.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="ic">🌱</div>
+                        <h4>Room to Scale</h4>
+                        <p>Existing customer demand already exceeds current 500-bird capacity — expansion has a ready
+                            market.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background:var(--paper);">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Where the funds go</span>
+                    <h2>Use of investment funds</h2>
+                </div>
+                <div class="use-of-funds">
+                    <div>
+                        <div class="bar-row">
+                            <div class="lbl"><span>New pen construction</span><span>40%</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width:40%"></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <div class="lbl"><span>Day-old chicks & layer stock</span><span>25%</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width:25%"></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <div class="lbl"><span>Feed & supplements (first 2 cycles)</span><span>20%</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width:20%"></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <div class="lbl"><span>Equipment (feeders, drinkers, lighting)</span><span>10%</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width:10%"></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <div class="lbl"><span>Working capital buffer</span><span>5%</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width:5%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="color:var(--forest);font-size:1.4rem;margin-bottom:14px;">Target raise: ₦12,000,000
+                        </h3>
+                        <p style="color:#4d5b4f;margin-bottom:14px;">This funds a second housing block to add 500
+                            additional broiler capacity per cycle plus 150 more layer hens — effectively doubling
+                            current output within one year.</p>
+                        <p style="color:#4d5b4f;">Projected break-even on the new capacity: <strong>3–4 production
+                                cycles</strong> (roughly 8–10 months).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Investment plans</span>
+                    <h2>Pick the way you'd like to come in</h2>
+                    <p>All plans are structured as profit-sharing arrangements tied to actual farm output, reviewed
+                        every cycle.</p>
+                </div>
+                <div class="tiers">
+                    <div class="tier">
+                        <span class="tname">Starter</span>
+                        <h3>₦250,000+</h3>
+                        <p class="sub">Cycle-based profit share</p>
+                        <ul>
+                            <li>Tied to one broiler production cycle</li>
+                            <li>Profit share paid at end of cycle (6–8 weeks)</li>
+                            <li>Cycle performance report</li>
+                            <li>Farm visit on request</li>
+                        </ul>
+                        <a class="btn btn-dark"
+                            href="https://wa.me/2349060736993?text=Hello%2C%20I%27m%20interested%20in%20the%20Starter%20Investment%20Plan"
+                            target="_blank">Discuss This Plan</a>
+                    </div>
+                    <div class="tier featured">
+                        <span class="tname">Growth</span>
+                        <h3>₦1,000,000+</h3>
+                        <p class="sub">Multi-cycle profit share</p>
+                        <ul>
+                            <li>Locked across 3 production cycles</li>
+                            <li>Priority profit-share percentage</li>
+                            <li>Quarterly financial statement</li>
+                            <li>Named co-funder of new pen block</li>
+                            <li>Farm visit + onsite walkthrough</li>
+                        </ul>
+                        <a class="btn btn-amber"
+                            href="https://wa.me/2349060736993?text=Hello%2C%20I%27m%20interested%20in%20the%20Growth%20Investment%20Plan"
+                            target="_blank">Discuss This Plan</a>
+                    </div>
+                    <div class="tier">
+                        <span class="tname">Partner</span>
+                        <h3>₦3,000,000+</h3>
+                        <p class="sub">Annual partnership</p>
+                        <ul>
+                            <li>12-month structured partnership</li>
+                            <li>Highest profit-share percentage</li>
+                            <li>Full visibility into farm records</li>
+                            <li>Input on expansion decisions</li>
+                            <li>First right on future raises</li>
+                        </ul>
+                        <a class="btn btn-dark"
+                            href="https://wa.me/2349060736993?text=Hello%2C%20I%27m%20interested%20in%20the%20Partner%20Investment%20Plan"
+                            target="_blank">Discuss This Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background:var(--paper);">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Past performance</span>
+                    <h2>How the last 3 cycles performed</h2>
+                    <p>Illustrative figures from recent broiler cycles at current 500-bird capacity, shared for
+                        reference — full records available on request.</p>
+                </div>
+                <table class="roi-table">
+                    <tr>
+                        <th>Cycle</th>
+                        <th>Birds</th>
+                        <th>Input Cost</th>
+                        <th>Sales Revenue</th>
+                        <th>Net Profit</th>
+                        <th>Margin</th>
+                    </tr>
+                    <tr>
+                        <td>Cycle — Q3 2025</td>
+                        <td class="num">480</td>
+                        <td class="num">₦2.1M</td>
+                        <td class="num">₦3.0M</td>
+                        <td class="num">₦900K</td>
+                        <td class="num">30%</td>
+                    </tr>
+                    <tr>
+                        <td>Cycle — Q4 2025</td>
+                        <td class="num">500</td>
+                        <td class="num">₦2.3M</td>
+                        <td class="num">₦3.35M</td>
+                        <td class="num">₦1.05M</td>
+                        <td class="num">31%</td>
+                    </tr>
+                    <tr>
+                        <td>Cycle — Q1 2026</td>
+                        <td class="num">500</td>
+                        <td class="num">₦2.25M</td>
+                        <td class="num">₦3.4M</td>
+                        <td class="num">₦1.15M</td>
+                        <td class="num">34%</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Common questions</span>
+                    <h2>Investor FAQ</h2>
+                </div>
+                <details class="faq-item" open>
+                    <summary>How is my investment protected?</summary>
+                    <p>All funds are tied to specific stock and recorded against our CAC-registered business. Investors
+                        receive a written agreement and a report at the end of every cycle showing how funds were used
+                        and what was earned.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>When do I receive returns?</summary>
+                    <p>Broiler cycles run 6–8 weeks, so Starter and Growth plan investors see their first profit share
+                        shortly after the relevant cycle closes and birds are sold.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I visit the farm before investing?</summary>
+                    <p>Yes — we encourage it. Reach out on WhatsApp and we'll schedule a walkthrough of the Mokola farm
+                        at a convenient time.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What happens if a cycle underperforms?</summary>
+                    <p>We share both upside and downside transparently in the cycle report. Our six-year track record
+                        has been consistently profitable, but agriculture carries normal seasonal and market risk like
+                        any farming business.</p>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="cta-band">
+                    <h3>Ready to talk numbers?</h3>
+                    <p>Send us a message on WhatsApp and we'll walk you through the full investment pack, past records,
+                        and a farm visit.</p>
+                    <a class="btn btn-amber"
+                        href="https://wa.me/2349060736993?text=Hello%2C%20I%27d%20like%20to%20discuss%20investing%20in%20Agrifarm%20Poultry"
+                        target="_blank">Chat With Us on WhatsApp →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= CONTACT ================= -->
+    <div class="page" id="contact">
+        <section style="padding-top:60px;">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow-dark">Get in touch</span>
+                    <h2>Talk to us directly on WhatsApp</h2>
+                    <p>The fastest way to reach Agrifarm Poultry — for orders, partnerships, careers or investment — is
+                        WhatsApp. Tap below or fill the form and we'll follow up.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card">
+                        <h3>Agrifarm Poultry</h3>
+                        <div class="contact-line">
+                            <div class="ic">📍</div>
+                            <div><b>Farm Location</b><span>Off Mokola Road, Mokola, Ibadan, Oyo State</span></div>
+                        </div>
+                        <div class="contact-line">
+                            <div class="ic">📞</div>
+                            <div><b>Phone / WhatsApp</b><span>0906 073 6993</span></div>
+                        </div>
+                        <div class="contact-line">
+                            <div class="ic">🕘</div>
+                            <div><b>Open Hours</b><span>Mon – Sat, 7:00am – 6:00pm</span></div>
+                        </div>
+                        <div class="contact-line">
+                            <div class="ic">🏛️</div>
+                            <div><b>Registration</b><span>CAC — BN 7456231</span></div>
+                        </div>
+                        <a class="whatsapp-big" href="https://wa.me/2349060736993?text=Hello%20Agrifarm%20Poultry"
+                            target="_blank">💬 Chat on WhatsApp</a>
+                    </div>
+
+                    <div class="form-card">
+                        <h3 style="color:var(--forest);font-size:1.3rem;margin-bottom:18px;">Send us a message</h3>
+                        <div class="form-row">
+                            <div><label>Full Name</label><input type="text" placeholder="e.g. Adeola Johnson"></div>
+                            <div><label>Phone Number</label><input type="text" placeholder="080..."></div>
+                        </div>
+                        <div class="form-row">
+                            <div><label>I'm reaching out about</label>
+                                <select>
+                                    <option>Placing an order</option>
+                                    <option>Investment opportunity</option>
+                                    <option>Job opening</option>
+                                    <option>General enquiry</option>
+                                </select>
+                            </div>
+                            <div><label>Preferred contact time</label><input type="text"
+                                    placeholder="e.g. Weekday mornings"></div>
+                        </div>
+                        <label>Message</label>
+                        <textarea placeholder="Tell us a bit about what you need..."></textarea>
+                        <button class="btn btn-primary" style="margin-top:18px;width:100%;justify-content:center;"
+                            onclick="sendToWhatsapp()">Send via WhatsApp →</button>
+                        <p class="form-note">This form opens a pre-filled WhatsApp chat — nothing is stored on this demo
+                            site.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand" style="color:#fff;margin-bottom:14px;"><span class="mark">🐔</span> Agrifarm
+                        Poultry</div>
+                    <p style="color:#a9c6af;font-size:0.88rem;max-width:280px;">Raising healthy broilers and laying
+                        fresh eggs in Mokola, Ibadan since 2020. CAC-registered and proudly local.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a onclick="showPage('home')">Home</a>
+                    <a onclick="showPage('about')">About Us</a>
+                    <a onclick="showPage('invest')">Invest With Us</a>
+                </div>
+                <div>
+                    <h5>Products</h5>
+                    <span>Live & Dressed Broilers</span>
+                    <span>Fresh Table Eggs</span>
+                    <span>Bulk Orders</span>
+                </div>
+                <div>
+                    <h5>Contact</h5>
+                    <span>Off Mokola Road, Ibadan</span>
+                    <span>0906 073 6993</span>
+                    <a href="https://wa.me/2349060736993" target="_blank">Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Agrifarm Poultry. All rights reserved.</span>
+                <span>CAC Reg. BN 7456231 — Mokola, Ibadan, Oyo State</span>
+            </div>
+        </div>
+    </footer>
+
+    <a class="wa-float" href="https://wa.me/2349060736993?text=Hello%20Agrifarm%20Poultry" target="_blank">💬</a>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo(0, 0);
+            document.getElementById('mobileNav').style.display = 'none';
+        }
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+        }
+        function sendToWhatsapp() {
+            const inputs = document.querySelectorAll('.form-card input, .form-card select, .form-card textarea');
+            const [name, phone, reason, time, msg] = inputs;
+            const text = `Hello Agrifarm Poultry, my name is ${name.value || '[name]'}. Reason: ${reason.value}. Message: ${msg.value || '[message]'}. Phone: ${phone.value || '[phone]'}. Best time: ${time.value || '[time]'}`;
+            window.open(`https://wa.me/2349060736993?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

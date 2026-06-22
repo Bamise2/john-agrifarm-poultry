@@ -1,0 +1,4 @@
+.gemini/
+.system_generated/
+.git/
+node_modules/
